@@ -7,9 +7,21 @@
     
     <script>
         $(document).ready(function(){
-            $("#main_price").click(function(){
-                $("#main_price_input").toggle();
-            });
+            $("#main_price, #discount_price").hide();
+
+            $("#price_option").change(function(){
+                let selectedOption = $(this).val();
+                if(selectedOption === "main_price"){
+                    $("#main_price").show();
+                    $("#discount_price").hide();
+
+                }else if (selectedOption === "discount_price"){
+                    $("#main_price").hide();
+                    $("#discount_price").show();
+                }else{
+                    $("#main_price, #discount_price").hide();
+                }
+            })
         });
     </script>
 
