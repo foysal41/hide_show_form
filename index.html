@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#main_price").click(function(){
+                $("#main_price_input").toggle();
+            });
+        });
+    </script>
+
+</head>
+<body>
+    
+    <form id="price_form">
+        <label for="price_option">Select Price Type:</label>
+        <select id="price_option">
+            <option value="">Select an option</option>
+            <option class ="main_price" value="main_price">Main Price</option>
+            <option value="discount_price">Discount Price</option>
+        </select>
+        
+        <div id="main_price" style="display:none;">
+            <label for="main_price_input">Main Price:</label>
+            <input type="text" id="main_price_input" name="main_price">
+        </div>
+        
+        <div id="discount_price" style="display:none;">
+            <label for="discount_price_input">Discount Price:</label>
+            <input type="text" id="discount_price_input" name="discount_price">
+        </div>
+    </form>
+
+</body>
+</html>
